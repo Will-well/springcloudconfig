@@ -1,0 +1,22 @@
+spring:
+  profiles:
+    active:
+      - dev
+---
+server:
+  port: 8201
+spring:
+  profiles: dev
+  application:
+    name: spring-cloud-config-client
+---
+server:
+  port: 8201
+spring:
+  profiles: beta
+  application:
+    name: spring-cloud-config-client
+eureka: 
+  client:
+    service-url:
+       defaultZone: http://edmin:123456@weir.com:7001/eureka #设置客户端链接注册中心的地址
