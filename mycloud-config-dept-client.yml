@@ -5,10 +5,6 @@ spring:
 ---
 server:
   port: 8001
-spring:
-  profiles: dev
-  application:
-    name: mycloud-config-dept-client
 info:
   app.name: weir-MyCloud
   company.name: www.weir.com 
@@ -35,6 +31,7 @@ mybatis:
     - classpath:mybatis/mapper/**/*.xml       #定义Mapper文件所在的位置
 
 spring:
+  profiles: dev
   messages:
     basename: i18n/Messages,i18n/Pages
   datasource:
@@ -50,14 +47,10 @@ spring:
       max-total: 5                                  # 最大的连接数
       max-wait-millis: 200                          # 等待连接获取的最大超时时间
   application:
-    name: mycloud-provider-dept-8001                #微服务的名称（便于日后的负载均衡） 
+    name: mycloud-config-dept-client                #微服务的名称（便于日后的负载均衡） 
 ---
 server:
   port: 8001
-spring:
-  profiles: beta
-  application:
-    name: mycloud-config-dept-client
 info:
   app.name: weir-MyCloud
   company.name: www.weir.com 
@@ -84,6 +77,7 @@ mybatis:
     - classpath:mybatis/mapper/**/*.xml       #定义Mapper文件所在的位置
 
 spring:
+  profiles: beta
   messages:
     basename: i18n/Messages,i18n/Pages
   datasource:
@@ -99,4 +93,4 @@ spring:
       max-total: 5                                  # 最大的连接数
       max-wait-millis: 200                          # 等待连接获取的最大超时时间
   application:
-    name: mycloud-provider-dept-8001                #微服务的名称（便于日后的负载均衡） 
+    name: mycloud-config-dept-client                #微服务的名称（便于日后的负载均衡） 
